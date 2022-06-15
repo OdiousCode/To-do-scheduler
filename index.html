@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="indexStyle.css" />
-    <title>Todo</title>
-  </head>
-  <body>
-    <div class="container">
-      <header class="header">
-        <div class="month">
-          <ul>
-            <li class="prev">&#10094;</li>
-            <li class="next">&#10095;</li>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <link rel="stylesheet" href="./style/todo.css">
+</head>
+<header>
+    <div class="month">
+        <ul>
+            <li class="prev" id="prevMonth">&#10094;</li>
+            <li class="next" id="nextMonth">&#10095;</li>
             <li>
-              December<br />
-              <span style="font-size: 18px">2022</span>
+                <span id="currentMonth"></span>
+                <span id="currentYear" style="font-size:18px"></span>
+
             </li>
           </ul>
         </div>
@@ -31,77 +31,64 @@
           <li>Saturday</li>
           <li>Sunday</li>
         </ul>
-      </header>
-      <div id="bar"></div>
-      <aside class="sidebar">
-        <div id="today">
-          <li id="date"></li>
-          <li id="time"></li>
-        </div>
-        <div id="todo">
-          <h4>Todo's for 10th</h4>
-          <ul class="todolist">
-            <a href=""><li>Walk turtle</li></a
-            ><a href=""><li>Design a todo</li></a>
-          </ul>
-        </div>
-      </aside>
 
-      <section class="days">
-        <ul class="days">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li class="active">10</li>
-          <li>11</li>
-          <li>12</li>
-          <li>13</li>
-          <li>14</li>
-          <li>15</li>
-          <li>16</li>
-          <li>17</li>
-          <li>18</li>
-          <li>19</li>
-          <li>20</li>
-          <li>21</li>
-          <li>22</li>
-          <li>23</li>
-          <li>24</li>
-          <li>25</li>
-          <li>26</li>
-          <li>27</li>
-          <li>28</li>
-          <li>29</li>
-          <li>30</li>
-          <li>31</li>
-        </ul>
-      </section>
-
-      <footer class="footer">
-        <ul>
-          <a href><li>Add todo</li></a>
-          <a href><li>Delete todo</li></a>
-          <a href><li>Edit todo</li></a>
-          <button onclick="showTodo()">Show todo</button>
-        </ul>
-      </footer>
     </div>
-  </body>
-  <script>
+
+    <ul class="weekdays">
+        <li>Monday</li>
+        <li>Tuesday</li>
+        <li>Wednesday</li>
+        <li>Thursday</li>
+        <li>Friday</li>
+        <li>Saturday</li>
+        <li>Sunday</li>
+    </ul>
+
+</header>
+
+<body>
+
+
+    <div id="todo" style="display: none;">
+        <h4>Todo's for 10th</h4>
+        <ul class="todolist"><a href="">
+                <li>Walk turtle</li>
+            </a><a href="">
+                <li>Design a todo</li>
+            </a></ul>
+    </div>
+    <ul class="days" id="days">
+    </ul>
+
+</body>
+<footer>
+    <ul><a href>
+            <li>Add todo</li>
+        </a>
+        <a href>
+            <li>Delete todo</li>
+        </a>
+        <a href>
+            <li>Edit todo</li>
+        </a>
+        <button class="btn" onclick="showTodo()">Show todo</button>
+    </ul>
+</footer>
+<script>
+
     function showTodo() {
-      var x = document.getElementById("todo");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
+        var x = document.getElementById("todo");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+
     }
-  </script>
-  <script src="today.js"></script>
+
+
+</script>
+<script src="./today.js"></script>
+
 </html>
+
