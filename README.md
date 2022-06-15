@@ -4,7 +4,7 @@
 
 Kraven för godkänt: 
 
-- [X] Skapa layouten enligt skiss ( Dölj kalendern på mobilvy )
+- [ ] Skapa layouten enligt skiss ( Dölj kalendern på mobilvy )
 - [ ] Skapa och designa titeln för verktyget
 - [ ] Skapa och designa välkomstsegmentet (Delen ovan to-do listan) Segmentet ska innehålla minst Tid, Veckodag och Datum
 - [ ] Användaren skall kunna lägga till en todo
