@@ -1,7 +1,7 @@
 (()=> {
     "use strict";
     let months = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"];
-    let weekDays = ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"];
+    
 
     let currentMonthElem = document.getElementById("currentMonth");
     let currentYearElem = document.getElementById("currentYear");
