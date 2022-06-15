@@ -127,7 +127,7 @@ ul {
   background-color: rgb(209, 209, 209);
   line-height: 75px;
 }
-.days li:hover {
+.days li:hover:not(.disabled) {
   background-color: #1abc9c;
 }
 .active {

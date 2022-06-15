@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>todo</title>
-    <link rel="stylesheet" href="./style/todo.css">
-</head>
-<header>
-    <div class="month">
-        <ul>
-            <li class="prev" id="prevMonth">&#10094;</li>
-            <li class="next" id="nextMonth">&#10095;</li>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="indexStyle.css" />
+    <title>Todo</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="month">
+          <ul>
+            <li class="prev">&#10094;</li>
+            <li class="next">&#10095;</li>
             <li>
-                <span id="currentMonth"></span>
-                <span id="currentYear" style="font-size:18px"></span>
-
+              <p id="currentMonth"></p>
+              <br />
+              <span style="font-size: 18px">2022</span>
             </li>
           </ul>
         </div>
@@ -31,64 +32,45 @@
           <li>Saturday</li>
           <li>Sunday</li>
         </ul>
+      </header>
+      <div id="bar"></div>
+      <aside class="sidebar">
+        <div id="today">
+          <li id="date"></li>
+          <li id="time"></li>
+        </div>
+        <div id="todo">
+          <h4>Todo's for 10th</h4>
+          <ul class="todolist">
+            <a href=""><li>Walk turtle</li></a
+            ><a href=""><li>Design a todo</li></a>
+          </ul>
+        </div>
+      </aside>
 
+      <section class="days">
+        <ul class="days" id="dayContainer"></ul>
+      </section>
+
+      <footer class="footer">
+        <ul>
+          <a href><li>Add todo</li></a>
+          <a href><li>Delete todo</li></a>
+          <a href><li>Edit todo</li></a>
+          <button onclick="showTodo()">Show todo</button>
+        </ul>
+      </footer>
     </div>
-
-    <ul class="weekdays">
-        <li>Monday</li>
-        <li>Tuesday</li>
-        <li>Wednesday</li>
-        <li>Thursday</li>
-        <li>Friday</li>
-        <li>Saturday</li>
-        <li>Sunday</li>
-    </ul>
-
-</header>
-
-<body>
-
-
-    <div id="todo" style="display: none;">
-        <h4>Todo's for 10th</h4>
-        <ul class="todolist"><a href="">
-                <li>Walk turtle</li>
-            </a><a href="">
-                <li>Design a todo</li>
-            </a></ul>
-    </div>
-    <ul class="days" id="days">
-    </ul>
-
-</body>
-<footer>
-    <ul><a href>
-            <li>Add todo</li>
-        </a>
-        <a href>
-            <li>Delete todo</li>
-        </a>
-        <a href>
-            <li>Edit todo</li>
-        </a>
-        <button class="btn" onclick="showTodo()">Show todo</button>
-    </ul>
-</footer>
-<script>
-
+  </body>
+  <script>
     function showTodo() {
-        var x = document.getElementById("todo");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-
+      var x = document.getElementById("todo");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
     }
-
-
-</script>
-<script src="./today.js"></script>
-
+  </script>
+  <script src="date.js"></script>
 </html>
-
