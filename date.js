@@ -28,6 +28,7 @@ function getDate() {
 function getMonth() {
   var currentdate = new Date();
   monthLabel.innerHTML = currentdate.toLocaleString("en-us", { month: "long" });
+  var day = currentdate.getDate();
   var month = currentdate.getMonth();
   var year = currentdate.getFullYear();
   daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -41,6 +42,9 @@ function getMonth() {
   for (var i = 0; i < daysInMonth; i++) {
     let li = document.createElement("li");
     li.innerText = i + 1;
+    if (i + 1 == day) {
+      li.classList.add("active");
+    }
     dayContainer.appendChild(li);
   }
 }
