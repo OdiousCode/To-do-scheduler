@@ -163,11 +163,18 @@ footer li {
   padding-left: 0px;
 }
 #todo li {
-  margin: 0;
+  margin: 2px;
+  padding: 2px;
   display: flex;
-
+  border-style: groove;
+  border-width: 5px;
+  background-color: #ddd;
+  font-size: 24px;
   text-align: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+#todo li:hover {
+  background-color: #1abc9c;
 }
 .sidebar {
   grid-area: Sidebar;
@@ -182,7 +189,6 @@ footer li {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
   background-color: #ddd;
   border: white 1px solid;
   color: #777;
@@ -199,4 +205,24 @@ footer li {
 #bar {
   grid-area: bar;
   background-color: #ddd;
+}
+@media only screen and (max-width: 600px) {
+.container{
+  grid-template-areas:
+    "Header Header"
+    "bar bar"
+    "Sidebar Sidebar"
+    "Footer Footer";
+  }
+  .weekdayscontainer {
+    display: none;
+  }
+  #today {
+    border: none;
+    border-bottom:#ddd solid 30px;
+
+  }
+  .days {
+    display: none;
+  }
 }

@@ -1,76 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="indexStyle.css" />
-    <title>Todo</title>
-  </head>
-  <body>
-    <div class="container">
-      <header class="header">
-        <div class="month">
-          <ul>
-            <li class="prev">&#10094;</li>
-            <li class="next">&#10095;</li>
-            <li>
-              <p id="currentMonth"></p>
-              <br />
-              <span style="font-size: 18px">2022</span>
-            </li>
-          </ul>
-        </div>
-      </header>
-      <header class="weekdayscontainer">
-        <ul class="weekdays">
-          <li>Monday</li>
-          <li>Tuesday</li>
-          <li>Wednesday</li>
-          <li>Thursday</li>
-          <li>Friday</li>
-          <li>Saturday</li>
-          <li>Sunday</li>
-        </ul>
-      </header>
-      <div id="bar"></div>
-      <aside class="sidebar">
-        <div id="today">
-          <li id="date"></li>
-          <li id="time"></li>
-        </div>
-        <div id="todo">
-          <h4>Todo's for 10th</h4>
-          <ul class="todolist">
-            <a href=""><li>Walk turtle</li></a
-            ><a href=""><li>Design a todo</li></a>
-          </ul>
-        </div>
-      </aside>
 
-      <section class="days">
-        <ul class="days" id="dayContainer"></ul>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="indexStyle.css" />
+  <title>Todo</title>
+</head>
 
-      <footer class="footer">
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="month">
         <ul>
-          <a href><li>Add todo</li></a>
-          <a href><li>Delete todo</li></a>
-          <a href><li>Edit todo</li></a>
-          <button onclick="showTodo()">Show todo</button>
+          <li class="prev">&#10094;</li>
+          <li class="next">&#10095;</li>
+          <li>
+            <p id="currentMonth"></p>
+
+            <span style="font-size: 18px">2022</span>
+          </li>
         </ul>
-      </footer>
-    </div>
-  </body>
-  <script>
-    function showTodo() {
-      var x = document.getElementById("todo");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
+      </div>
+    </header>
+    <header class="weekdayscontainer">
+      <ul class="weekdays">
+        <li>Monday</li>
+        <li>Tuesday</li>
+        <li>Wednesday</li>
+        <li>Thursday</li>
+        <li>Friday</li>
+        <li>Saturday</li>
+        <li>Sunday</li>
+      </ul>
+    </header>
+    <div id="bar"></div>
+    <aside class="sidebar">
+      <div id="today">
+        <li id="date"></li>
+        <li id="time"></li>
+      </div>
+      <div id="todo">
+        <ul class="todolist">
+          <li><a href="" target="_blank">Walk the turtle 08:00 - 09:00</a><span>
+            <button class="editTodo">✍️</button>
+            <button class="deleteTodo">❌</button></span>
+          </li>
+          <li><a href="" target="_blank">Design a todo 10:30 - 11:00</a><span>
+            <button class="editTodo">✍️</button>
+            <button class="deleteTodo">❌</button></span>
+          </li>
+          <li><a href="" target="_blank">Fix world peace 12:30 - 13:00</a><span>
+            <button class="editTodo">✍️</button>
+            <button class="deleteTodo">❌</button></span>
+          </li>
+          <li><a href="" target="_blank">Colonize Mars 14:00 - 16:00</a><span>
+            <button class="editTodo">✍️</button>
+            <button class="deleteTodo">❌</button></span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="days">
+      <ul class="days" id="dayContainer"></ul>
+    </section>
+
+    <footer class="footer">
+      <ul>
+        <a href="Todo.html" target="_blank"><button>Add todo</button></a>
+        <button onclick="showTodo()">Show todo</button>
+      </ul>
+    </footer>
+  </div>
+</body>
+<script>
+  function showTodo() {
+    var x = document.getElementById("todo");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
     }
-  </script>
-  <script src="date.js"></script>
+  }
+</script>
+<script src="date.js"></script>
+
 </html>
