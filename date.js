@@ -32,7 +32,7 @@ function getMonth() {
   var month = currentdate.getMonth();
   var year = currentdate.getFullYear();
   daysInMonth = new Date(year, month + 1, 0).getDate();
-  startingDay = new Date().getDay();
+  startingDay = new Date(year + "-" + (month+1) + "-01").getDay();
   console.log(startingDay);
   for (let i = 1; i < startingDay; i++) {
     let li = document.createElement("li");
