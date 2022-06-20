@@ -2,16 +2,16 @@ let AddToDoButton = document.getElementById("addTodo");
 let toDoContainer = document.getElementById("toDoContainer");
 let inputField = document.getElementById("inputField");
 
-AddToDoButton.addEventListener("click", function () {
-  var paragraph = document.createElement("p");
-  paragraph.classList.add("paragraph-styling");
-  paragraph.innerText = inputField.value;
-  toDoContainer.appendChild(paragraph);
-  inputField.value = "";
-  paragraph.addEventListener("dblclick", function () {
-    toDoContainer.removeChild(paragraph);
-  });
-});
+// AddToDoButton.addEventListener("click", function () {
+//   var paragraph = document.createElement("p");
+//   paragraph.classList.add("paragraph-styling");
+//   paragraph.innerText = inputField.value;
+//   toDoContainer.appendChild(paragraph);
+//   inputField.value = "";
+//   paragraph.addEventListener("dblclick", function () {
+//     toDoContainer.removeChild(paragraph);
+//   });
+// });
 
 let addTodoBtn = document.getElementById("addTodoBtn");
 let modalElem = document.getElementById("modal");
@@ -38,9 +38,11 @@ function showModal() {
 }
 
 function saveTask(task) {
-  localStorage.setItem("task", [task]);
+  let tasks = getTask() || [];
+  tasks.push(task);
+  localStorage.setItem("task", JSON.stringify(tasks));
 }
 
 function getTask() {
-  return localStorage.getItem("task");
+  return JSON.parse(localStorage.getItem("task"));
 }
