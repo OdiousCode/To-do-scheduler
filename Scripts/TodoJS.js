@@ -48,7 +48,11 @@ editBtnSubmit.addEventListener("click", (event) => {
 if (tasks) {
   tasks.map((task) => {
     let liElem = document.createElement("li");
-    liElem.innerHTML = task[0];
+    var todoDate = task[1];
+    todoTime = todoDate.split("T").pop();
+    todoDate = todoDate.split("T").shift();
+    liElem.innerHTML = task[0] + " " + todoTime + " CET";
+    liElem.dataset.date = todoDate;
     todosList.appendChild(liElem);
     liElem.addEventListener("click", showEditTodoModal);
   });
