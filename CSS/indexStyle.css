@@ -333,7 +333,7 @@ footer li:hover {
     }
     #today {
       border: none;
-      border-bottom:#ddd solid 30px;
+      border-bottom: var(--color-white) 30px;
   
     }
     .days {
