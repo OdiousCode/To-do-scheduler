@@ -1,40 +1,83 @@
 let addTodoBtn = document.getElementById("addTodoBtn");
-let modalElem = document.getElementById("modal");
+let addTodoModal = document.getElementById("addTodoModal");
+let editTodoModal = document.getElementById("editTodoModal");
 let closeBtn = document.getElementById("close");
 let submitBtn = document.getElementById("submitBtn");
+let editBtnSubmit = document.getElementById("editBtnSubmit");
 let todosList = document.getElementById("todolist");
+let tasks = getTask();
+let todoArr = [];
+// add todo modal
+addTodoBtn.addEventListener("click", showAddTodoModal);
 
-addTodoBtn.addEventListener("click", showModal);
-closeBtn.addEventListener("click", hideModal);
+// close todo modal
+closeBtn.addEventListener("click", hideAddTodoModal);
 
+// add todo handler
 submitBtn.addEventListener("click", (event) => {
   event.preventDefault();
   let taskItem = document.getElementById("taskItem");
   let taskDate = document.getElementById("taskDate");
-  saveTask([taskItem.value, taskDate.value]);
+  let task = [taskItem.value, taskDate.value];
+  if (taskItem.value != "" && taskDate.value != "") {
+    saveTask(task);
+  }
   hideModal();
 });
 
-let tasks = getTask();
-let li, aTag;
+// edit todo handler
+// get the new value
+// match it to the old value
+// save new value
+editBtnSubmit.addEventListener("click", (event) => {
+  event.preventDefault();
+  let taskDetail = document.getElementById("taskDetail");
+  let taskDateDetail = document.getElementById("taskDateDetail");
 
+  todoArr.map((item1) => {
+    tasks.map((item2) => {
+      if (item1[0] == item2[0]) {
+        item2[0] = taskDetail.value;
+        item2[1] = taskDateDetail.value;
+      }
+    });
+  });
+});
+
+// show todos
 if (tasks) {
   tasks.map((task) => {
-    li = document.createElement("li");
-    aTag = document.createElement("a");
-    aTag.innerText = task[0];
-    aTag.href = "#";
-    li.appendChild(aTag);
+    let liElem = document.createElement("li");
+    liElem.innerHTML = task[0];
+    todosList.appendChild(liElem);
+    liElem.addEventListener("click", showEditTodoModal);
   });
-  console.log("aTag");
 }
 
-function hideModal() {
-  modalElem.style.display = "none";
+// helper functions
+
+function hideAddTodoModal() {
+  addTodoModal.style.display = "none";
 }
 
-function showModal() {
-  modalElem.style.display = "block";
+function showAddTodoModal() {
+  addTodoModal.style.display = "block";
+}
+
+function hideEditTodoModal() {
+  editTodoModal.style.display = "none";
+}
+
+function showEditTodoModal(e) {
+  editTodoModal.style.display = "block";
+  let inputField = document.getElementById("taskDetail");
+  let inputDate = document.getElementById("taskDateDetail");
+
+  let data = tasks.filter((task) => task[0] === e.target.innerText);
+  inputField.value = data[0][0];
+  inputDate.value = data[0][1];
+
+  todoArr.push([taskDetail.value, taskDateDetail.value]);
 }
 
 function saveTask(task) {

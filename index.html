@@ -49,12 +49,8 @@
       </div>
       <div id="todo">
         <h4>Todo's for 10th</h4>
-        <ul class="todolist">
-          <a href="#">
-            <li>Walk turtle</li>
-          </a><a href="#">
-            <li>Design a todo</li>
-          </a>
+        <ul class="todolist" id="todolist">
+
         </ul>
 
       </div>
@@ -63,17 +59,17 @@
     <section class="days">
       <ul class="days" id="dayContainer"></ul>
     </section>
-    <!-- Modal //Start-->
-    <div id="modal" class="modal">
+    <!-- add todo modal // Start-->
+    <div id="addTodoModal" class="modal" style="display: none;">
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close" id="close"><i class="fa fa-close"></i></span>
         <form id="form">
           <lable class="form-label">Add Todo</lable>
 
-          <input type="text" name="todo" placeholder="add todo" id="taskItem" class="input">
+          <input type="text" name="todo" placeholder="add todo" id="taskItem" class="input" required>
 
-          <input type="datetime-local" name="taskDate" id="taskDate" class="input">
+          <input type="datetime-local" name="taskDate" id="taskDate" class="input" required>
 
           <button type="submit" id="submitBtn" class="btn">
             <i class="fa fa-plus"></i>
@@ -82,7 +78,27 @@
         </form>
       </div>
     </div>
-    <!-- The Modal //End-->
+    <!-- add todo modal // End-->
+    <!-- edit todo modal //Start-->
+    <div id="editTodoModal" class="modal" style="display: none;">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" id="close"><i class="fa fa-close"></i></span>
+        <form id="form">
+          <lable class="form-label">Edit Todo</lable>
+
+          <input type="text" name="todo" id="taskDetail" class="input">
+
+          <input type="datetime-local" name="taskDate" id="taskDateDetail" class="input">
+
+          <button type="submit" id="editBtnSubmit" class="btn">
+            <i class="fa fa-pen"></i>
+            Edit Todo
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- edit todo modal //End-->
     <footer class="footer">
       <ul>
         <a href="#">
