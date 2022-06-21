@@ -320,3 +320,23 @@ footer li:hover {
   padding: 10px;
 }
 
+@media only screen and (max-width: 600px) {
+  .container{
+    grid-template-areas:
+      "Header Header"
+      "bar bar"
+      "Sidebar Sidebar"
+      "Footer Footer";
+    }
+    .weekdayscontainer {
+      display: none;
+    }
+    #today {
+      border: none;
+      border-bottom:#ddd solid 30px;
+  
+    }
+    .days {
+      display: none;
+    }
+  }
