@@ -9,7 +9,7 @@
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="indexStyle.css" />
+  <link rel="stylesheet" href="./CSS/indexStyle.css" />
 
   <title>Todo</title>
 </head>
@@ -48,9 +48,9 @@
         <li id="time"></li>
       </div>
       <div id="todo">
-        <h4>Todo's for 10th</h4>
+        <h4><!-- Kod för att hämta aktiv dags datum här--></h4>
         <ul class="todolist" id="todolist">
-
+            <!-- Script för att hämta ut todos här -->
         </ul>
 
       </div>
@@ -110,22 +110,12 @@
         <a href="#">
           <li><i class="fa-solid fa-pen-to-square"></i> Edit</li>
         </a>
-        <button onclick="showTodo()">Show todo</button>
       </ul>
     </footer>
   </div>
 </body>
-<script>
-  function showTodo() {
-    var x = document.getElementById("todo");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-</script>
-<script src="TodoJS.js"></script>
-<script src="date.js"></script>
+
+<script src="./Scripts/TodoJS.js"></script>
+<script src="./Scripts/date.js"></script>
 
 </html>
