@@ -22,7 +22,7 @@ submitBtn.addEventListener("click", (event) => {
   if (taskItem.value != "" && taskDate.value != "") {
     saveTask(task);
   }
-  hideModal();
+  hideAddTodoModal();
 });
 
 // edit todo handler
