@@ -63,10 +63,11 @@ function setActive(day) {
       }
     }
   }
+
   currentdate = new Date();
   month = currentdate.getMonth();
   year = currentdate.getFullYear();
-  activeDate = new Date(year, month, day + 2);
+  activeDate = new Date(year, month, day + 1);
 
   var options = {
     month: "long",
@@ -74,6 +75,7 @@ function setActive(day) {
   };
   todo = document.getElementById("activeDay");
   todo.innerText = "Todo " + activeDate.toLocaleDateString("en-US", options);
+  activeDate.setDate(activeDate.getDate() + 1);
   todos = document.getElementById("todolist").children;
   for (var i = 0; i < todos.length; i++) {
     isoDate = activeDate.toISOString().split("T")[0];
@@ -83,6 +85,23 @@ function setActive(day) {
     } else {
       todos[i].style.display = "none";
     }
+  }
+}
+function deselectDay() {
+  let days = document.getElementById("dayContainer").children;
+
+  for (var i = 0; i < days.length; i++) {
+    {
+      if (days[i].classList.contains("active")) {
+        days[i].classList.remove("active");
+      }
+    }
+  }
+  todo = document.getElementById("activeDay");
+  todo.innerText = "";
+  todos = document.getElementById("todolist").children;
+  for (var i = 0; i < todos.length; i++) {
+    todos[i].style.display = "none";
   }
 }
 
