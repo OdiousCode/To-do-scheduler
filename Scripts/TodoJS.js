@@ -26,6 +26,7 @@ submitBtn.addEventListener("click", (event) => {
   hideAddTodoModal();
 });
 
+
 // TODO: edit todo
 editBtnSubmit.addEventListener("click", (event) => {
   event.preventDefault();
@@ -42,18 +43,14 @@ editBtnSubmit.addEventListener("click", (event) => {
   });
 });
 
-// Delete todo
-deleteBtn.addEventListener("click", (event) => {
-  let taskDetail = document.getElementById("taskDetail");
-
-  tasks.map((item) => {
-    if (item[0] === taskDetail.value) {
-      tasks.splice(tasks.indexOf(item), 1);
-      localStorage.setItem("task", JSON.stringify(tasks));
-    }
-  });
+// delete todo
+deleteBtn.addEventListener("click", () => {
+  let specificTask = document.getElementById("taskDetail").value;
+  tasks = tasks.filter((task) => task[0] !== specificTask);
+  localStorage.setItem("task", JSON.stringify(tasks));
   hideEditTodoModal();
 });
+
 // show todos
 if (tasks) {
   tasks.map((task) => {
@@ -86,8 +83,8 @@ function showEditTodoModal(e) {
   editTodoModal.style.display = "block";
   let inputField = document.getElementById("taskDetail");
   let inputDate = document.getElementById("taskDateDetail");
-
-  let data = tasks.filter((task) => task[0] === e.target.innerText);
+  let specificTask = e.target.innerText.split(" ");
+  let data = tasks.filter((task) => task[0] === specificTask[0]);
   inputField.value = data[0][0];
   inputDate.value = data[0][1];
 
