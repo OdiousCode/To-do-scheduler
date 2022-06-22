@@ -59,7 +59,15 @@ if (tasks) {
     var todoDate = task[1];
     todoTime = todoDate.split("T").pop();
     todoDate = todoDate.split("T").shift();
-    liElem.innerHTML = task[0] + " " + todoTime + " CET";
+    liElem.innerHTML =
+      "<b class='todoItemDate'>" +
+      todoDate +
+      "</b>" +
+      task[0] +
+      " " +
+      todoTime +
+      " CET";
+
     liElem.dataset.date = todoDate;
     todosList.appendChild(liElem);
     liElem.addEventListener("click", showEditTodoModal);

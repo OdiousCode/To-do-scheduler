@@ -148,10 +148,21 @@ body {
   color: var(--color-white);
   background-color: var(--color-secondary);
   line-height: 75px;
+  position: relative;
 }
 
 .days li:hover:not(.disabled) {
   background-color: var(--color-hover);
+}
+.count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  width: 25px;
+  font-size: 16px;
+  display: block;
+  color: var(--color-black);
 }
 
 li.active {
@@ -186,9 +197,12 @@ footer li:hover {
   height: 100%;
   list-style-type: none;
   background-color: var(--color-gray);
-  border: 2px solid var(--color-black)
+  border: 2px solid var(--color-black);
 }
 
+#bar div {
+  display: none;
+}
 #todo {
   width: 100%;
   margin-top: 10px;
@@ -209,6 +223,10 @@ footer li:hover {
   justify-content: center;
 }
 
+.todoItemDate {
+  display: block;
+  float: left;
+}
 #today {
   height: 15%;
   text-align: center;
@@ -249,7 +267,6 @@ footer li:hover {
 }
 #bar button:hover {
   color: var(--color-secondary);
-  
 }
 
 /* modal popup */
@@ -354,5 +371,16 @@ footer li:hover {
   }
   .days {
     display: none;
+  }
+  #bar div {
+    display: block;
+  }
+  #bar {
+    grid-area: bar;
+    background-color: var(--color-gray);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0%;
+    font-size: 15px;
   }
 }

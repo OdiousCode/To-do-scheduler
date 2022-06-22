@@ -33,22 +33,39 @@ function getMonth() {
   var year = currentdate.getFullYear();
   daysInMonth = new Date(year, month + 1, 0).getDate();
   startingDay = new Date(year + "-" + (month + 1) + "-01").getDay();
-  setActive(day - 1);
   for (let i = 1; i < startingDay; i++) {
     let li = document.createElement("li");
     li.classList.add("disabled");
     dayContainer.appendChild(li);
   }
+  dropdown = document.getElementById("chooseDay");
+  todos = document.getElementById("todolist").children;
   for (var i = 0; i < daysInMonth; i++) {
     let li = document.createElement("li");
     li.innerText = i + 1;
-    if (i + 1 == day) {
-      li.classList.add("active");
-    }
-
+    dayDate = new Date(year, month, i + 2);
     li.setAttribute("onclick", "setActive(" + i + ");");
     dayContainer.appendChild(li);
+    let count = document.createElement("div");
+    count.classList.add("count");
+    var tmp = 0;
+    for (var k = 0; k < todos.length; k++) {
+      isoDate = dayDate.toISOString().split("T")[0];
+      if (todos[k].dataset.date == isoDate) {
+        tmp += 1;
+      } else {
+      }
+    }
+    if (tmp > 0) {
+      count.innerText = tmp;
+    }
+    li.appendChild(count);
+    var opt = document.createElement("option");
+    opt.value = i + 1;
+    opt.innerHTML = i + 1;
+    dropdown.appendChild(opt);
   }
+  deselectDay();
 }
 function setActive(day) {
   let days = document.getElementById("dayContainer").children;
@@ -68,6 +85,7 @@ function setActive(day) {
   month = currentdate.getMonth();
   year = currentdate.getFullYear();
   activeDate = new Date(year, month, day + 1);
+  console.log(day, activeDate);
 
   var options = {
     month: "long",
@@ -79,14 +97,18 @@ function setActive(day) {
   todos = document.getElementById("todolist").children;
   for (var i = 0; i < todos.length; i++) {
     isoDate = activeDate.toISOString().split("T")[0];
-    //2022-06-21
     if (todos[i].dataset.date == isoDate) {
       todos[i].style.display = "block";
     } else {
       todos[i].style.display = "none";
     }
   }
+  todoDates = document.getElementsByClassName("todoItemDate");
+  for (var i = 0; i < todoDates.length; i++) {
+    todoDates[i].style.display = "none";
+  }
 }
+
 function deselectDay() {
   let days = document.getElementById("dayContainer").children;
 
@@ -100,9 +122,20 @@ function deselectDay() {
   todo = document.getElementById("activeDay");
   todo.innerText = "";
   todos = document.getElementById("todolist").children;
-  for (var i = 0; i < todos.length; i++) {
-    todos[i].style.display = "none";
+  todoDates = document.getElementsByClassName("todoItemDate");
+  for (var i = 0; i < todoDates.length; i++) {
+    todoDates[i].style.display = "block";
   }
+  for (var i = 0; i < todos.length; i++) {
+    todos[i].style.display = "block";
+  }
+}
+
+document.getElementById("chooseDay").onchange = changeListener;
+
+function changeListener() {
+  var value = this.value;
+  setActive(value - 1);
 }
 
 getDate();
