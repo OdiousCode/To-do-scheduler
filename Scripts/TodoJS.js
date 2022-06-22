@@ -26,7 +26,8 @@ submitBtn.addEventListener("click", (event) => {
   hideAddTodoModal();
 });
 
-// TODO: edit todo handler
+
+// TODO: edit todo
 editBtnSubmit.addEventListener("click", (event) => {
   event.preventDefault();
   let taskDetail = document.getElementById("taskDetail");
