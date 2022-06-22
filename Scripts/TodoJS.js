@@ -26,25 +26,26 @@ submitBtn.addEventListener("click", (event) => {
   hideAddTodoModal();
 });
 
-
-// TODO: edit todo
+// edit todo
 editBtnSubmit.addEventListener("click", (event) => {
   event.preventDefault();
   let taskDetail = document.getElementById("taskDetail");
   let taskDateDetail = document.getElementById("taskDateDetail");
 
-  todoArr.map((item1) => {
-    tasks.map((item2) => {
-      if (item1[0] == item2[0]) {
-        item2[0] = taskDetail.value;
-        item2[1] = taskDateDetail.value;
-      }
-    });
+  tasks = tasks.map((item) => {
+    if (item[0] === todoArr[0][0]) {
+      item[0] = taskDetail.value;
+      item[1] = taskDateDetail.value;
+    }
+    return item;
   });
+  localStorage.setItem("task", JSON.stringify(tasks));
+  hideEditTodoModal();
 });
 
 // delete todo
-deleteBtn.addEventListener("click", () => {
+deleteBtn.addEventListener("click", (event) => {
+  event.preventDefault();
   let specificTask = document.getElementById("taskDetail").value;
   tasks = tasks.filter((task) => task[0] !== specificTask);
   localStorage.setItem("task", JSON.stringify(tasks));
