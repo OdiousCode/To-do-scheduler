@@ -42,20 +42,33 @@
           <li>Saturday</li>
           <li>Sunday</li>
         </ul>
-      </header>
-      <div id="bar"><button onclick="deselectDay()" class ="fa-regular fa-calendar-xmark"><span style="margin-left: 5px">Deselect day</span></button></div>
-      <aside class="sidebar">
-        <div id="today">
-          <li id="date"></li>
-          <li id="time"></li>
-        </div>
-        <div id="todo">
-          <h4 id="activeDay"><!-- Kod för att hämta aktiv dags datum här--></h4>
-          <ul class="todolist" id="todolist">
-            <!-- Script för att hämta ut todos här -->
-          </ul>
-        </div>
-      </aside>
+      </div>
+    </header>
+    <header class="weekdayscontainer">
+      <ul class="weekdays">
+        <li>Monday</li>
+        <li>Tuesday</li>
+        <li>Wednesday</li>
+        <li>Thursday</li>
+        <li>Friday</li>
+        <li>Saturday</li>
+        <li>Sunday</li>
+      </ul>
+    </header>
+    <div id="bar">
+    </div>
+    <aside class="sidebar">
+      <div id="today">
+        <li id="date"></li>
+        <li id="time"></li>
+      </div>
+      <div id="todo">
+        <h4>
+          <!-- Kod för att hämta aktiv dags datum här-->
+        </h4>
+        <ul class="todolist" id="todolist">
+          <!-- Script för att hämta ut todos här -->
+        </ul>
 
       <section class="days">
         <ul class="days" id="dayContainer"></ul>
@@ -109,13 +122,15 @@
               id="taskDateDetail"
               class="input"
             />
-
-            <button type="submit" id="editBtnSubmit" class="btn">
-              <i class="fa fa-pen"></i>
-              Edit Todo
-            </button>
-          </form>
-        </div>
+          <button type="submit" id="editBtnSubmit" class="btn">
+            <i class="fa fa-pen"></i>
+            Edit Todo
+          </button>
+          <button type="submit" id="deleteBtn" class="btn btn-red">
+            <i class="fa fa-trash"></i>
+            Delete Todo
+          </button>
+        </form>
       </div>
       <!-- edit todo modal //End-->
       <footer class="footer">

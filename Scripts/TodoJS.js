@@ -4,6 +4,7 @@ let editTodoModal = document.getElementById("editTodoModal");
 let closeBtn = document.getElementById("close");
 let submitBtn = document.getElementById("submitBtn");
 let editBtnSubmit = document.getElementById("editBtnSubmit");
+let deleteBtn = document.getElementById("deleteBtn");
 let todosList = document.getElementById("todolist");
 let tasks = getTask();
 let todoArr = [];
@@ -25,10 +26,7 @@ submitBtn.addEventListener("click", (event) => {
   hideAddTodoModal();
 });
 
-// edit todo handler
-// get the new value
-// match it to the old value
-// save new value
+// TODO: edit todo
 editBtnSubmit.addEventListener("click", (event) => {
   event.preventDefault();
   let taskDetail = document.getElementById("taskDetail");
@@ -44,6 +42,18 @@ editBtnSubmit.addEventListener("click", (event) => {
   });
 });
 
+// Delete todo
+deleteBtn.addEventListener("click", (event) => {
+  let taskDetail = document.getElementById("taskDetail");
+
+  tasks.map((item) => {
+    if (item[0] === taskDetail.value) {
+      tasks.splice(tasks.indexOf(item), 1);
+      localStorage.setItem("task", JSON.stringify(tasks));
+    }
+  });
+  hideEditTodoModal();
+});
 // show todos
 if (tasks) {
   tasks.map((task) => {

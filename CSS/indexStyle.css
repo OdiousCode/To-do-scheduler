@@ -1,12 +1,13 @@
 :root {
-  --color-primary: #03634a;
-  --color-secondary: #0d7496;
-  --color-active: #0f3745;
-  --color-hover: #0f3745;
-  --color-black: #000;
-  --color-white: #fff;
-  --color-links: #710a22;
-  --color-gray: #ddd;
+    --color-primary: #03634a;
+    --color-secondary: #0d7496;
+    --color-active: #0f3745;
+    --color-hover: #0f3745;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-links: #710a22;
+    --color-red: #ac0f34;
+    --color-gray: #ddd
 }
 
 * {
@@ -307,6 +308,14 @@ footer li:hover {
 
 .btn:hover {
   background: var(--color-hover);
+}
+
+.btn-red {
+  background-color: var(--color-red);
+}
+
+.btn-red:hover {
+  background: var(--color-links);
 }
 
 .fa {
