@@ -24,7 +24,7 @@ Kraven för väl godkänt:
 - [ ] Användaren skall kunna ändra en todo
 - [ ] Användaren skall kunna växla till andra månader i kalendervyn
 - [ ] Svenska helgdagar visas i kalendern (finns API)
-- [ ] Filtrerar todolistan utifrån vald dag i kalendern, det ska gå avmarkera vald dag
+- [X] Filtrerar todolistan utifrån vald dag i kalendern, det ska gå avmarkera vald dag
 
 * Alla punkter for godkänt är uppfyllda
 * Ärenden för väl godkänt är gjorda
