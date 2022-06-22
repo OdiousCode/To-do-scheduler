@@ -1,46 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
 
-    <link rel="stylesheet" href="./CSS/indexStyle.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Todo</title>
-  </head>
+  <link rel="stylesheet" href="./CSS/indexStyle.css" />
 
-  <body>
-    <div class="container">
-      <header class="header">
-        <div class="month">
-          <ul>
-            <li class="prev">&#10094;</li>
-            <li class="next">&#10095;</li>
-            <li>
-              <p id="currentMonth"></p>
-              <br />
-              <span style="font-size: 18px">2022</span>
-            </li>
-          </ul>
-        </div>
-      </header>
-      <header class="weekdayscontainer">
-        <ul class="weekdays">
-          <li>Monday</li>
-          <li>Tuesday</li>
-          <li>Wednesday</li>
-          <li>Thursday</li>
-          <li>Friday</li>
-          <li>Saturday</li>
-          <li>Sunday</li>
+  <title>Todo</title>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="month">
+        <ul>
+          <li class="prev">&#10094;</li>
+          <li class="next">&#10095;</li>
+          <li>
+            <p id="currentMonth"></p>
+            <br />
+            <span style="font-size: 18px">2022</span>
+          </li>
         </ul>
       </div>
     </header>
@@ -70,58 +55,44 @@
           <!-- Script för att hämta ut todos här -->
         </ul>
 
-      <section class="days">
-        <ul class="days" id="dayContainer"></ul>
-      </section>
-      <!-- add todo modal // Start-->
-      <div id="addTodoModal" class="modal" style="display: none">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close" id="close"><i class="fa fa-close"></i></span>
-          <form id="form">
-            <lable class="form-label">Add Todo</lable>
-
-            <input
-              type="text"
-              name="todo"
-              placeholder="add todo"
-              id="taskItem"
-              class="input"
-              required
-            />
-
-            <input
-              type="datetime-local"
-              name="taskDate"
-              id="taskDate"
-              class="input"
-              required
-            />
-
-            <button type="submit" id="submitBtn" class="btn">
-              <i class="fa fa-plus"></i>
-              Add Todo
-            </button>
-          </form>
-        </div>
       </div>
-      <!-- add todo modal // End-->
-      <!-- edit todo modal //Start-->
-      <div id="editTodoModal" class="modal" style="display: none">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close" id="close"><i class="fa fa-close"></i></span>
-          <form id="form">
-            <lable class="form-label">Edit Todo</lable>
+    </aside>
 
-            <input type="text" name="todo" id="taskDetail" class="input" />
+    <section class="days">
+      <ul class="days" id="dayContainer"></ul>
+    </section>
+    <!-- add todo modal // Start-->
+    <div id="addTodoModal" class="modal" style="display: none;">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" id="close"><i class="fa fa-close"></i></span>
+        <form id="form">
+          <lable class="form-label">Add Todo</lable>
 
-            <input
-              type="datetime-local"
-              name="taskDate"
-              id="taskDateDetail"
-              class="input"
-            />
+          <input type="text" name="todo" placeholder="add todo" id="taskItem" class="input" required>
+
+          <input type="datetime-local" name="taskDate" id="taskDate" class="input" required>
+
+          <button type="submit" id="submitBtn" class="btn">
+            <i class="fa fa-plus"></i>
+            Add Todo
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- add todo modal // End-->
+    <!-- edit todo modal //Start-->
+    <div id="editTodoModal" class="modal" style="display: none;">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" id="close"><i class="fa fa-close"></i></span>
+        <form id="form">
+          <lable class="form-label">Edit Todo</lable>
+
+          <input type="text" name="todo" id="taskDetail" class="input">
+
+          <input type="datetime-local" name="taskDate" id="taskDateDetail" class="input">
+
           <button type="submit" id="editBtnSubmit" class="btn">
             <i class="fa fa-pen"></i>
             Edit Todo
@@ -132,27 +103,25 @@
           </button>
         </form>
       </div>
-      <!-- edit todo modal //End-->
-      <footer class="footer">
-        <ul>
-          <a href="#">
-            <li id="addTodoBtn">
-              <i class="fa-solid fa-calendar-plus"></i> Add
-            </li>
-          </a>
-          <a href="#">
-            <li><i class="fa-solid fa-calendar-xmark"> </i> Delete</li>
-          </a>
-          <a href="#">
-            <li><i class="fa-solid fa-pen-to-square"></i> Edit</li>
-          </a>
-        </ul>
-      </footer>
     </div>
-  </body>
-  <script type="text/javascript">
-    var activeDate = new Date();
-  </script>
-  <script src="./Scripts/TodoJS.js"></script>
-  <script src="./Scripts/date.js"></script>
+    <!-- edit todo modal //End-->
+    <footer class="footer">
+      <ul>
+        <a href="#">
+          <li id="addTodoBtn"><i class="fa-solid fa-calendar-plus"></i> Add</li>
+        </a>
+        <a href="#">
+          <li><i class="fa-solid fa-calendar-xmark"> </i> Delete</li>
+        </a>
+        <a href="#">
+          <li><i class="fa-solid fa-pen-to-square"></i> Edit</li>
+        </a>
+      </ul>
+    </footer>
+  </div>
+</body>
+
+<script src="./Scripts/TodoJS.js"></script>
+<script src="./Scripts/date.js"></script>
+
 </html>

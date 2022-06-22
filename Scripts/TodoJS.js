@@ -58,11 +58,7 @@ deleteBtn.addEventListener("click", (event) => {
 if (tasks) {
   tasks.map((task) => {
     let liElem = document.createElement("li");
-    var todoDate = task[1];
-    todoTime = todoDate.split("T").pop();
-    todoDate = todoDate.split("T").shift();
-    liElem.innerHTML = task[0] + " " + todoTime + " CET";
-    liElem.dataset.date = todoDate;
+    liElem.innerHTML = task[0];
     todosList.appendChild(liElem);
     liElem.addEventListener("click", showEditTodoModal);
   });
