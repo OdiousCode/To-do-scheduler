@@ -1,5 +1,5 @@
 :root {
-  --color-primary: #03634a;
+  --color-primary: #1589af;
   --color-secondary: #0d7496;
   --color-active: #0f3745;
   --color-hover: #0f3745;
@@ -173,6 +173,9 @@ li.active {
 footer {
   text-align: center;
   background-color: var(--color-primary);
+  background-image: url("../Images/aaaalogoTransparent.png");
+  background-size: 65px;
+  background-repeat:no-repeat;
   padding-top: 10px;
   height: 100%;
 }
@@ -353,7 +356,14 @@ footer li:hover {
   font-size: 26px;
   padding: 10px;
 }
-
+.footerLogo {
+  float: left;
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  border: 0;
+  z-index: 999;
+}
 @media only screen and (max-width: 600px) {
   .container {
     grid-template-areas:

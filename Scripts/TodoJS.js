@@ -24,6 +24,7 @@ submitBtn.addEventListener("click", (event) => {
     saveTask(task);
   }
   hideAddTodoModal();
+  window.location.reload();
 });
 
 // edit todo
