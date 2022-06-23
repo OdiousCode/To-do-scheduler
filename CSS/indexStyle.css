@@ -32,6 +32,7 @@ ul {
 html,
 body {
   margin: 0;
+  overflow: hidden;
 }
 
 .container {
@@ -174,9 +175,9 @@ footer {
   text-align: center;
   background-color: var(--color-primary);
   background-image: url("../Images/aaaalogoTransparent.png");
-  background-size: 65px;
-  background-repeat:no-repeat;
-  padding-top: 10px;
+  background-size: 6vh;
+  padding-top: 0.5vh;
+  background-repeat: no-repeat;
   height: 100%;
 }
 footer ul {
@@ -231,7 +232,7 @@ footer li:hover {
   float: left;
 }
 #today {
-  height: 15%;
+  height: 20%;
   text-align: center;
   display: flex;
   flex-direction: column;
