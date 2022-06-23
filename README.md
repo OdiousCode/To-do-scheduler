@@ -1,6 +1,10 @@
 # To-do-scheduler
 **En att-göra schemaläggare**
+**AV: AAAA - Görgen Andersson, Sarah Ali, Hampus Andersson, Andreas Andersson
 
+**Avgränsningar:** I brist på tid valde vi att hålla vår interface väldigt enkel och hålla oss till funktionalitet över stil, vi tänkte att om vi känner för det så tar vi och snyggar till projektet som slutkläm.
+
+Vi avvaktade även med att lägga till funktionalitet för att kunna växla månad och att fylla i helgdagar via API i brist på tid.
 
 Kraven för godkänt: 
 
