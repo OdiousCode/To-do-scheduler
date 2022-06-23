@@ -3,7 +3,9 @@
 
 **AV:** AAAA - Görgen Andersson, Sarah Ali, Hampus Andersson, Andreas Andersson
 
-**Avgränsningar:** I brist på tid valde vi att hålla vår interface väldigt enkel och hålla oss till funktionalitet över stil, vi tänkte att om vi känner för det så tar vi och snyggar till projektet som slutkläm.
+**Avgränsningar:** 
+
+I brist på tid valde vi att hålla vår interface väldigt enkel och hålla oss till funktionalitet över stil, vi tänkte att om vi känner för det så tar vi och snyggar till projektet som slutkläm.
 
 Vi avvaktade även med att lägga till funktionalitet för att kunna växla månad och att fylla i helgdagar via API i brist på tid.
 
@@ -13,15 +15,15 @@ Kraven för godkänt:
 - [X] Skapa och designa titeln för verktyget
 - [X] Skapa och designa välkomstsegmentet (Delen ovan to-do listan) Segmentet ska innehålla minst Tid, Veckodag och Datum
 - [X] Användaren skall kunna lägga till en todo
-- [x] Användaren skall kunna ta bort en todo
+- [X] Användaren skall kunna ta bort en todo
 - [X] Skapa och designa kalendervyn med en månadsvy över aktuell månad
-- [x] Skapade todos skall kopplas till kalender och visas med en siffra som representerar antal todos på en viss dag
+- [X] Skapade todos skall kopplas till kalender och visas med en siffra som representerar antal todos på en viss dag
 
-* Uppgiften lämnas in i tid!
-* Verktyget fungerar enligt beskrivning
-* ALLA ärenden för godkänt är gjorda
-* Sidan är responsiv
-* Git och Github har använts enligt beskrivning
+* Uppgiften lämnas in i tid! - Deadline 23/6 23:59
+* Verktyget fungerar enligt beskrivning - Lite browserspöken, verkar funka bra i chrome iaf.
+* ALLA ärenden för godkänt är gjorda - Delete/edit funkar men lite användarovänligt i andra browsers, måste fylla i namnet själv.
+* Sidan är responsiv - Funktionell i mobilt läge
+* Git och Github har använts enligt beskrivning - Så gott det går, lite fulcommits direkt till main emellanåt.
 
 Kraven för väl godkänt:
 
