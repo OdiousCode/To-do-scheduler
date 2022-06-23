@@ -228,12 +228,12 @@ footer li:hover {
   float: left;
 }
 #today {
-  height: 15%;
+  height: 20%;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
+  overflow: hidden;
   background-color: var(--color-gray);
   border: 1px solid var(--color-white);
   color: var(--color-black);
