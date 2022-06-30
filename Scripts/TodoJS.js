@@ -1,18 +1,21 @@
 let addTodoBtn = document.getElementById("addTodoBtn");
 let addTodoModal = document.getElementById("addTodoModal");
 let editTodoModal = document.getElementById("editTodoModal");
-let closeBtn = document.getElementById("close");
+let closeAddBtn = document.getElementById("close");
+let closeEditBtn = document.getElementById("closeEdit");
 let submitBtn = document.getElementById("submitBtn");
 let editBtnSubmit = document.getElementById("editBtnSubmit");
 let deleteBtn = document.getElementById("deleteBtn");
 let todosList = document.getElementById("todolist");
 let tasks = getTask();
 let todoArr = [];
+
 // add todo modal
 addTodoBtn.addEventListener("click", showAddTodoModal);
 
 // close todo modal
-closeBtn.addEventListener("click", hideAddTodoModal);
+closeAddBtn.addEventListener("click", hideAddTodoModal);
+closeEditBtn.addEventListener("click", hideEditTodoModal);
 
 // add todo handler
 submitBtn.addEventListener("click", (event) => {
@@ -42,6 +45,7 @@ editBtnSubmit.addEventListener("click", (event) => {
   });
   localStorage.setItem("task", JSON.stringify(tasks));
   hideEditTodoModal();
+  window.location.reload();
 });
 
 // delete todo
@@ -51,23 +55,23 @@ deleteBtn.addEventListener("click", (event) => {
   tasks = tasks.filter((task) => task[0] !== specificTask);
   localStorage.setItem("task", JSON.stringify(tasks));
   hideEditTodoModal();
+  window.location.reload();
 });
 
 // show todos
 if (tasks) {
   tasks.map((task) => {
     let liElem = document.createElement("li");
+    liElem.classList = "todosList";
     var todoDate = task[1];
     todoTime = todoDate.split("T").pop();
     todoDate = todoDate.split("T").shift();
-    liElem.innerHTML =
-      "<b class='todoItemDate'>" +
-      todoDate +
-      "</b>" +
-      task[0] +
-      " " +
-      todoTime +
-      " CET";
+    liElem.innerHTML = `
+      <b class="todoItemDate">
+        ${todoDate} 
+      </b>
+      ${task[0]} ${todoTime} CET
+    `;
 
     liElem.dataset.date = todoDate;
     todosList.appendChild(liElem);
@@ -79,6 +83,10 @@ if (tasks) {
 
 function hideAddTodoModal() {
   addTodoModal.style.display = "none";
+}
+
+function hideEditTodoModal() {
+  editTodoModal.style.display = "none";
 }
 
 function showAddTodoModal() {
@@ -93,8 +101,9 @@ function showEditTodoModal(e) {
   editTodoModal.style.display = "block";
   let inputField = document.getElementById("taskDetail");
   let inputDate = document.getElementById("taskDateDetail");
-  let specificTask = e.target.innerText.split(" ");
-  let data = tasks.filter((task) => task[0] === specificTask[0]);
+  let specificTask = e.target.innerText.split(/\s/);
+  let data = tasks.filter((task) => task[0] === specificTask[1]);
+
   inputField.value = data[0][0];
   inputDate.value = data[0][1];
 
